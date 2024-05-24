@@ -1,0 +1,48 @@
+class Calculadora:
+    def __init__(self):
+        self.numero1 = 0
+        self.numero2 = 0
+
+    def multiplica(self, numero1, numero2):
+        return numero1 * numero2
+
+    def somar(self, numero1, numero2):
+        return numero1 + numero2
+
+    def dividir(self, numero1, numero2):
+        if numero1 != 0 and numero2 != 0:
+            return numero1 / numero2
+        else:
+            return "Erro: Um dos números é zero"
+
+    def subtrair(self, numero1, numero2):
+        return numero1 - numero2
+
+def main():
+    calculadora = Calculadora()
+    numero1 = int(input("Digite o primeiro número: "))
+    numero2 = int(input("Digite o segundo número: "))
+
+    print("Escolha a operação:")
+    print("1. Multiplicação")
+    print("2. Soma")
+    print("3. Divisão")
+    print("4. Subtração")
+
+    escolha = input("Digite sua escolha (1/2/3/4): ")
+
+    if escolha == '1':
+        resultado = calculadora.multiplica(numero1, numero2)
+    elif escolha == '2':
+        resultado = calculadora.somar(numero1, numero2)
+    elif escolha == '3':
+        resultado = calculadora.dividir(numero1, numero2)
+    elif escolha == '4':
+        resultado = calculadora.subtrair(numero1, numero2)
+    else:
+        resultado = "Escolha inválida"
+
+    print(f'Resultado: {resultado}')
+
+if __name__ == "__main__":
+    main()
